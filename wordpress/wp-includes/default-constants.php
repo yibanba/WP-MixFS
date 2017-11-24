@@ -18,14 +18,14 @@ function wp_initial_constants() {
 	// set memory limits
 	if ( !defined('WP_MEMORY_LIMIT') ) {
 		if( is_multisite() ) {
-			define('WP_MEMORY_LIMIT', '64M');
+			define('WP_MEMORY_LIMIT', '256');
 		} else {
-			define('WP_MEMORY_LIMIT', '40M');
+			define('WP_MEMORY_LIMIT', '256');
 		}
 	}
 
 	if ( ! defined( 'WP_MAX_MEMORY_LIMIT' ) ) {
-		define( 'WP_MAX_MEMORY_LIMIT', '256M' );
+		define( 'WP_MAX_MEMORY_LIMIT', '512M' );
 	}
 
 	/**
@@ -261,7 +261,7 @@ function wp_functionality_constants() {
 	 * @since 2.5.0
 	 */
 	if ( !defined( 'AUTOSAVE_INTERVAL' ) )
-		define( 'AUTOSAVE_INTERVAL', 60 );
+		define( 'AUTOSAVE_INTERVAL', 7200 );
 
 	/**
 	 * @since 2.9.0
@@ -270,7 +270,7 @@ function wp_functionality_constants() {
 		define( 'EMPTY_TRASH_DAYS', 30 );
 
 	if ( !defined('WP_POST_REVISIONS') )
-		define('WP_POST_REVISIONS', true);
+		define('WP_POST_REVISIONS', false);
 
 	/**
 	 * @since 3.3.0
@@ -304,6 +304,6 @@ function wp_templating_constants() {
 	 * @since 3.0.0
 	 */
 	if ( !defined('WP_DEFAULT_THEME') )
-		define( 'WP_DEFAULT_THEME', 'twentythirteen' );
+		define( 'WP_DEFAULT_THEME', '' );
 
 }
